@@ -1,0 +1,18 @@
+# Private inputs
+kyc_level = "2"
+jurisdiction = "344"
+nullifier_secret = "1"
+provider_sig_s = "1"
+provider_sig_r_x = "1"
+wallet_address = "1"
+
+jurisdiction_path = ["0", "0", "0", "0", "0", "0", "0", "0"]
+jurisdiction_path_indices = ["0", "0", "0", "0", "0", "0", "0", "0"]
+
+# Public inputs
+min_kyc_level = "2"
+allowed_jurisdictions_root = "0x13bd9dbff2be08153a1611e762cac8f06c945bc763c5eb4339fb55cd34383cd1"
+nullifier = "0x07ebfbf4df29888c6cd6dca13d4bb9d1a923013ddbbcbdc3378ab8845463297b"
+treasury_address = "1"
+proof_timestamp = "1744000000"
+expiry_window = "3600"

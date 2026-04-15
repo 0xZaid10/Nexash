@@ -1,0 +1,15 @@
+# Private inputs
+amount = "1000"
+spending_limit = "5000"
+operator_role = "1"
+cumulative_daily_spend = "2000"
+daily_spend_limit = "10000"
+
+# Public inputs
+policy_hash = "0x027cd81adc1c2cf952317abf1e83a8287547d0f273b4c1720af29950a6f0439c"
+requires_multisig = "0"
+multisig_threshold = "0"
+min_role = "1"
+payment_request_id = "1"
+treasury_address = "1"
+proof_timestamp = "1744000000"

@@ -1,0 +1,6 @@
+[package]
+name = "transaction_policy"
+type = "bin"
+authors = ["Nexash"]
+
+[dependencies]
