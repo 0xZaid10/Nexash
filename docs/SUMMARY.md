@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-* [Welcome to Nexash](README.md)
+* [Welcome to Nexash](overview.md)
 * [Quick Start](introduction/quick-start.md)
 * [Core Concepts](introduction/core-concepts.md)
 * [Why HashKey Chain](introduction/why-hashkey.md)
