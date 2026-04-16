@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Force font smoothing */
+*, *::before, *::after { box-sizing: border-box; }
+
+@layer base {
+  :root {
+    --font-geist-sans: 'GeistSans', system-ui, sans-serif;
+    --font-geist-mono: 'GeistMono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-text-primary;
+    font-family: var(--font-geist-sans);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-border rounded-xl;
+  }
+
+  .btn-primary {
+    @apply px-5 py-2.5 bg-text-primary text-white text-sm font-semibold rounded-lg
+           hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-5 py-2.5 bg-white text-text-primary text-sm border border-border rounded-lg
+           hover:bg-surface-secondary transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-brand {
+    @apply px-5 py-2.5 bg-brand-600 text-white text-sm font-semibold rounded-lg
+           hover:bg-brand-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .input {
+    @apply w-full px-3 py-2.5 text-sm bg-white border border-border rounded-lg
+           placeholder:text-text-muted
+           focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500
+           transition-colors;
+  }
+
+  .label {
+    @apply block text-xs font-medium text-text-secondary mb-1.5;
+  }
+
+  .stat-card {
+    @apply p-5 bg-surface-secondary rounded-xl;
+  }
+
+  .stat-value {
+    @apply text-2xl font-bold text-text-primary tracking-tight;
+  }
+
+  .stat-label {
+    @apply text-xs text-text-tertiary mt-1;
+  }
+
+  .section-tag {
+    @apply text-xs font-semibold text-brand-600 uppercase tracking-wide mb-3;
+  }
+}
+
+/* ZK proof generation progress animation */
+@keyframes proof-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.proof-generating {
+  animation: proof-pulse 1.5s ease-in-out infinite;
+}

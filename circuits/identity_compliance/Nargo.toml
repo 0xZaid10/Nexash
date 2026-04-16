@@ -1,0 +1,6 @@
+[package]
+name = "identity_compliance"
+type = "bin"
+authors = ["Nexash"]
+
+[dependencies]
