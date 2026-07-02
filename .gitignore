@@ -1,0 +1,54 @@
+# Env & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+.npm
+
+# Build
+dist/
+build/
+*.tsbuildinfo
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+data/
+
+# Logs
+logs/
+*.log
+
+# Foundry build artifacts
+contracts/cache/
+contracts/out/
+contracts/lib/
+contracts/broadcast/*/177/
+!contracts/broadcast/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Misc
+*.bak
+*.tmp
+.vercel
