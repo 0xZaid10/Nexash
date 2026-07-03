@@ -1,0 +1,176 @@
+[
+  {
+    "type": "event",
+    "name": "Deposited",
+    "inputs": [
+      { "name": "token", "type": "address", "indexed": true },
+      { "name": "from", "type": "address", "indexed": true },
+      { "name": "amount", "type": "uint256", "indexed": false }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "PayeeRegistered",
+    "inputs": [
+      { "name": "payee", "type": "address", "indexed": true },
+      { "name": "requiredCapability", "type": "bytes32", "indexed": false },
+      { "name": "minKycLevel", "type": "uint8", "indexed": false },
+      { "name": "perPaymentLimit", "type": "uint256", "indexed": false },
+      { "name": "dailyLimit", "type": "uint256", "indexed": false }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "PayeeUpdated",
+    "inputs": [
+      { "name": "payee", "type": "address", "indexed": true },
+      { "name": "perPaymentLimit", "type": "uint256", "indexed": false },
+      { "name": "dailyLimit", "type": "uint256", "indexed": false },
+      { "name": "active", "type": "bool", "indexed": false }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "PayeeDeactivated",
+    "inputs": [{ "name": "payee", "type": "address", "indexed": true }]
+  },
+  {
+    "type": "event",
+    "name": "PaymentReleased",
+    "inputs": [
+      { "name": "payee", "type": "address", "indexed": true },
+      { "name": "token", "type": "address", "indexed": true },
+      { "name": "amount", "type": "uint256", "indexed": false },
+      { "name": "mandateHash", "type": "bytes32", "indexed": true }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "deposit",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      { "name": "token", "type": "address" },
+      { "name": "amount", "type": "uint256" }
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "registerPayee",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      { "name": "payee", "type": "address" },
+      { "name": "requiredCapability", "type": "bytes32" },
+      { "name": "minKycLevel", "type": "uint8" },
+      { "name": "perPaymentLimit", "type": "uint256" },
+      { "name": "dailyLimit", "type": "uint256" }
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "updatePayee",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      { "name": "payee", "type": "address" },
+      { "name": "perPaymentLimit", "type": "uint256" },
+      { "name": "dailyLimit", "type": "uint256" },
+      { "name": "active", "type": "bool" }
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "deactivatePayee",
+    "stateMutability": "nonpayable",
+    "inputs": [{ "name": "payee", "type": "address" }],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "releasePayment",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      { "name": "payee", "type": "address" },
+      { "name": "token", "type": "address" },
+      { "name": "amount", "type": "uint256" },
+      { "name": "mandateHash", "type": "bytes32" }
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "getPayeePolicy",
+    "stateMutability": "view",
+    "inputs": [{ "name": "payee", "type": "address" }],
+    "outputs": [
+      {
+        "type": "tuple",
+        "components": [
+          { "name": "payee", "type": "address" },
+          { "name": "requiredCapability", "type": "bytes32" },
+          { "name": "minKycLevel", "type": "uint8" },
+          { "name": "perPaymentLimit", "type": "uint256" },
+          { "name": "dailyLimit", "type": "uint256" },
+          { "name": "active", "type": "bool" }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getRemainingDailyAllowance",
+    "stateMutability": "view",
+    "inputs": [{ "name": "payee", "type": "address" }],
+    "outputs": [{ "type": "uint256" }]
+  },
+  {
+    "type": "function",
+    "name": "isMandateSettled",
+    "stateMutability": "view",
+    "inputs": [{ "name": "mandateHash", "type": "bytes32" }],
+    "outputs": [{ "type": "bool" }]
+  },
+  {
+    "type": "function",
+    "name": "balanceOf",
+    "stateMutability": "view",
+    "inputs": [{ "name": "token", "type": "address" }],
+    "outputs": [{ "type": "uint256" }]
+  },
+  {
+    "type": "function",
+    "name": "operator",
+    "stateMutability": "view",
+    "inputs": [],
+    "outputs": [{ "type": "address" }]
+  },
+  {
+    "type": "function",
+    "name": "attestationRegistry",
+    "stateMutability": "view",
+    "inputs": [],
+    "outputs": [{ "type": "address" }]
+  },
+  {
+    "type": "function",
+    "name": "setOperator",
+    "stateMutability": "nonpayable",
+    "inputs": [{ "name": "newOperator", "type": "address" }],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "pause",
+    "stateMutability": "nonpayable",
+    "inputs": [],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "unpause",
+    "stateMutability": "nonpayable",
+    "inputs": [],
+    "outputs": []
+  }
+]

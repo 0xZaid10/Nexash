@@ -1,0 +1,145 @@
+[
+  {
+    "type": "event",
+    "name": "IssuerRegistered",
+    "inputs": [
+      { "name": "issuer", "type": "address", "indexed": true },
+      { "name": "label", "type": "string", "indexed": false }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "IssuerRevoked",
+    "inputs": [{ "name": "issuer", "type": "address", "indexed": true }]
+  },
+  {
+    "type": "event",
+    "name": "AttestationRecorded",
+    "inputs": [
+      { "name": "subject", "type": "address", "indexed": true },
+      { "name": "capability", "type": "bytes32", "indexed": true },
+      { "name": "issuer", "type": "address", "indexed": true },
+      { "name": "reportTxHash", "type": "bytes32", "indexed": false },
+      { "name": "taskId", "type": "bytes32", "indexed": false },
+      { "name": "kycLevel", "type": "uint8", "indexed": false },
+      { "name": "issuedAt", "type": "uint64", "indexed": false },
+      { "name": "expiresAt", "type": "uint64", "indexed": false }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "AttestationRevokedEvent",
+    "inputs": [
+      { "name": "subject", "type": "address", "indexed": true },
+      { "name": "capability", "type": "bytes32", "indexed": true }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "registerIssuer",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      { "name": "issuer", "type": "address" },
+      { "name": "label", "type": "string" }
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "revokeIssuer",
+    "stateMutability": "nonpayable",
+    "inputs": [{ "name": "issuer", "type": "address" }],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "recordAttestation",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      { "name": "subject", "type": "address" },
+      { "name": "capability", "type": "bytes32" },
+      { "name": "reportTxHash", "type": "bytes32" },
+      { "name": "taskId", "type": "bytes32" },
+      { "name": "kycLevel", "type": "uint8" },
+      { "name": "expiresAt", "type": "uint64" }
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "revokeAttestation",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      { "name": "subject", "type": "address" },
+      { "name": "capability", "type": "bytes32" }
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "isValid",
+    "stateMutability": "view",
+    "inputs": [
+      { "name": "subject", "type": "address" },
+      { "name": "capability", "type": "bytes32" }
+    ],
+    "outputs": [{ "type": "bool" }]
+  },
+  {
+    "type": "function",
+    "name": "isValidWithMinLevel",
+    "stateMutability": "view",
+    "inputs": [
+      { "name": "subject", "type": "address" },
+      { "name": "capability", "type": "bytes32" },
+      { "name": "minKycLevel", "type": "uint8" }
+    ],
+    "outputs": [{ "type": "bool" }]
+  },
+  {
+    "type": "function",
+    "name": "getAttestation",
+    "stateMutability": "view",
+    "inputs": [
+      { "name": "subject", "type": "address" },
+      { "name": "capability", "type": "bytes32" }
+    ],
+    "outputs": [
+      {
+        "type": "tuple",
+        "components": [
+          { "name": "subject", "type": "address" },
+          { "name": "capability", "type": "bytes32" },
+          { "name": "issuer", "type": "address" },
+          { "name": "reportTxHash", "type": "bytes32" },
+          { "name": "taskId", "type": "bytes32" },
+          { "name": "kycLevel", "type": "uint8" },
+          { "name": "issuedAt", "type": "uint64" },
+          { "name": "expiresAt", "type": "uint64" },
+          { "name": "revoked", "type": "bool" }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "isIssuer",
+    "stateMutability": "view",
+    "inputs": [{ "name": "issuer", "type": "address" }],
+    "outputs": [{ "type": "bool" }]
+  },
+  {
+    "type": "function",
+    "name": "pause",
+    "stateMutability": "nonpayable",
+    "inputs": [],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "unpause",
+    "stateMutability": "nonpayable",
+    "inputs": [],
+    "outputs": []
+  }
+]
